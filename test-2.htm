@@ -1,0 +1,29 @@
+<style>
+#div {
+  position: relative; /* любое значение position, кроме static */
+  height: 10em;
+  background: green;
+}
+</style>
+
+<div id="div"></div>
+
+<script>
+var x=0;
+var y=0;
+var x1=0;
+var y1=0;
+document.getElementById('div').onmousedown = function(e) {
+  x = e.offsetX==undefined?e.layerX:e.offsetX;
+  y = e.offsetY==undefined?e.layerY:e.offsetY;
+  //alert(x +'x'+ y);
+}
+
+document.getElementById('div').onmouseup = function(e) {
+  x1 = e.offsetX==undefined?e.layerX:e.offsetX;
+  y1 = e.offsetY==undefined?e.layerY:e.offsetY;
+  alert((x1-x) +'x'+ (y1-y));
+}
+
+
+</script>
